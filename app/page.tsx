@@ -1,69 +1,96 @@
-import Image from "next/image";
+import AnnouncementBar from "@/components/AnnouncementBar";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import TrustPillars from "@/components/TrustPillars";
+import Catalog from "@/components/Catalog";
+import CartDrawer from "@/components/CartDrawer";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      {/* Bandeau d'annonce */}
+      <AnnouncementBar />
+
+      {/* Navigation */}
+      <Navbar />
+
+      {/* Contenu principal */}
+      <main>
+        {/* 1. Hero — Immersion & Clarté */}
+        <Hero />
+
+        {/* 2. Rassurance Express — 3 piliers de conversion */}
+        <TrustPillars />
+
+        {/* 3. Catalogue Interactif — La pièce maîtresse */}
+        <Catalog />
+
+        {/* 4. Section Comment Commander — Ancrage WhatsApp */}
+        <section
+          id="commander"
+          className="bg-ink text-sand py-20 lg:py-28"
+        >
+          <div className="max-w-5xl mx-auto px-6 lg:px-10 text-center">
+            <span className="text-[10px] uppercase tracking-[0.4em] text-gold">
+              Commander en 3 étapes
+            </span>
+            <h2 className="font-display text-4xl sm:text-5xl mt-4 leading-tight">
+              Une Expérience d'Atelier,
+              <br />
+              <em className="font-light italic">Sans Intermédiaire.</em>
+            </h2>
+
+            <div className="mt-16 grid md:grid-cols-3 gap-10 text-left">
+              <div>
+                <span className="font-display text-5xl text-gold/40">01</span>
+                <h3 className="font-display text-xl mt-4">
+                  Choisissez votre pièce
+                </h3>
+                <p className="text-sm text-sand/60 mt-3 leading-relaxed font-light">
+                  Parcourez la collection et sélectionnez votre taille (S à XL
+                  ou sur-mesure) et votre couleur préférée.
+                </p>
+              </div>
+              <div>
+                <span className="font-display text-5xl text-gold/40">02</span>
+                <h3 className="font-display text-xl mt-4">
+                  Ajoutez à votre sac
+                </h3>
+                <p className="text-sm text-sand/60 mt-3 leading-relaxed font-light">
+                  Votre sac calcule automatiquement le sous-total en EUR, USD
+                  et FCFA. Renseignez votre nom et votre ville.
+                </p>
+              </div>
+              <div>
+                <span className="font-display text-5xl text-gold/40">03</span>
+                <h3 className="font-display text-xl mt-4">
+                  Envoyez sur WhatsApp
+                </h3>
+                <p className="text-sm text-sand/60 mt-3 leading-relaxed font-light">
+                  Un clic suffit : votre commande détaillée arrive directement
+                  chez Astride. Confirmation, paiement et livraison en direct.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-16 inline-flex flex-col sm:flex-row gap-4">
+              <a
+                href="#collection"
+                className="inline-block border border-gold text-gold px-8 py-4 text-xs uppercase tracking-[0.25em] hover:bg-gold hover:text-ink transition-all"
+              >
+                Retour à la Collection
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
-    </div>
+
+      {/* 6. Footer Haut de gamme */}
+      <Footer />
+
+      {/* Panier Hybride — Toujours monté, ouvert via Zustand */}
+      <CartDrawer />
+    </>
   );
 }
