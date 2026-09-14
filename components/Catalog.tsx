@@ -13,7 +13,8 @@ export default function Catalog() {
       : PRODUCTS.filter((p) => p.category === active);
 
   return (
-    <section id="collection" className="bg-white py-20 lg:py-28">
+    // ✅ APRÈS
+<section id="collection" className="bg-sand py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="text-center mb-14">
           <span className="text-[10px] uppercase tracking-[0.4em] text-gold">

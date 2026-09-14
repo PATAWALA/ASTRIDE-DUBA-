@@ -13,7 +13,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-white">
+    <section className="relative overflow-hidden bg-sand">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center py-16 lg:py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
