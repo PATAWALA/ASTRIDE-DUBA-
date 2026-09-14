@@ -58,12 +58,13 @@ Merci de me recontacter sous 24h ✨`;
 
   return (
     <section className="relative overflow-hidden bg-sand">
-      <div className="max-w-4xl mx-auto px-6 lg:px-10 py-20 lg:py-28">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center py-16 lg:py-24">
+        {/* COLONNE GAUCHE — Titre + Arguments + Rassurance */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center"
+          className="order-2 lg:order-1"
         >
           <span className="text-[10px] uppercase tracking-[0.4em] text-gold mb-6 inline-flex items-center gap-2">
             <Sparkles size={12} strokeWidth={1.5} />
@@ -78,18 +79,18 @@ Merci de me recontacter sous 24h ✨`;
             Dubaï & Inde.
           </h1>
 
-          <p className="mt-8 text-base lg:text-lg text-ink/70 leading-relaxed max-w-2xl mx-auto font-light">
+          <p className="mt-8 text-base lg:text-lg text-ink/70 leading-relaxed max-w-lg font-light">
             Envoyez-nous votre projet. Nous analysons votre dossier
             <span className="text-ink font-normal"> gratuitement sous 24h </span>
             et vous proposons un plan d'accompagnement sur-mesure.
           </p>
 
           {/* 3 arguments clés */}
-          <ul className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-left">
+          <ul className="mt-10 space-y-4">
             {ADVANTAGES.map((adv, i) => (
               <li
                 key={i}
-                className="flex items-start gap-2.5 text-sm text-ink/70 font-light"
+                className="flex items-start gap-3 text-sm text-ink/80 font-light"
               >
                 <Check
                   size={16}
@@ -100,33 +101,52 @@ Merci de me recontacter sous 24h ✨`;
               </li>
             ))}
           </ul>
+
+          {/* Rassurance */}
+          <div className="mt-12 flex items-center gap-6 text-[10px] uppercase tracking-[0.25em] text-ink/50 flex-wrap">
+            <span>✦ Réponse sous 24h</span>
+            <span className="w-px h-3 bg-ink/20" />
+            <span>✦ 100 % confidentiel</span>
+            <span className="w-px h-3 bg-ink/20" />
+            <span>✦ Sans engagement</span>
+          </div>
         </motion.div>
 
-        {/* Formulaire d'analyse */}
+        {/* COLONNE DROITE — Formulaire d'analyse (à la place de l'image) */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{
-            duration: 0.9,
-            delay: 0.3,
+            duration: 1,
+            delay: 0.2,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="mt-14 border border-gold/30 bg-sand p-6 sm:p-8 lg:p-10"
+          className="order-1 lg:order-2"
         >
-          <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
-            <div className="flex items-center gap-2">
-              <Clock size={14} className="text-gold" strokeWidth={1.5} />
-              <span className="text-[10px] uppercase tracking-[0.3em] text-ink/70">
-                Analyse gratuite — Réponse sous 24h
+          <div className="border border-gold/30 bg-sand p-6 sm:p-8 lg:p-10 relative">
+            {/* Coin décoratif or */}
+            <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-gold" />
+
+            <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
+              <div className="flex items-center gap-2">
+                <Clock size={14} className="text-gold" strokeWidth={1.5} />
+                <span className="text-[10px] uppercase tracking-[0.3em] text-ink/70">
+                  Analyse gratuite
+                </span>
+              </div>
+              <span className="text-[10px] uppercase tracking-[0.25em] text-gold">
+                ✦ Sous 24h
               </span>
             </div>
-            <span className="text-[10px] uppercase tracking-[0.25em] text-gold">
-              ✦ 100 % confidentiel
-            </span>
-          </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid sm:grid-cols-2 gap-4">
+            <h2 className="font-display text-3xl mb-2">
+              Votre projet
+            </h2>
+            <p className="text-xs text-ink/50 mb-6 font-light">
+              Remplissez ce formulaire, nous vous recontactons personnellement.
+            </p>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="text-[10px] uppercase tracking-[0.25em] text-ink/50 block mb-2">
                   Nom complet
@@ -140,6 +160,7 @@ Merci de me recontacter sous 24h ✨`;
                   className="w-full bg-transparent border border-ink/15 px-4 py-3 text-sm placeholder:text-ink/40 focus:outline-none focus:border-gold transition"
                 />
               </div>
+
               <div>
                 <label className="text-[10px] uppercase tracking-[0.25em] text-ink/50 block mb-2">
                   WhatsApp
@@ -153,9 +174,7 @@ Merci de me recontacter sous 24h ✨`;
                   className="w-full bg-transparent border border-ink/15 px-4 py-3 text-sm placeholder:text-ink/40 focus:outline-none focus:border-gold transition"
                 />
               </div>
-            </div>
 
-            <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label className="text-[10px] uppercase tracking-[0.25em] text-ink/50 block mb-2">
                   Type de projet
@@ -172,6 +191,7 @@ Merci de me recontacter sous 24h ✨`;
                   ))}
                 </select>
               </div>
+
               <div>
                 <label className="text-[10px] uppercase tracking-[0.25em] text-ink/50 block mb-2">
                   Budget estimé
@@ -188,31 +208,31 @@ Merci de me recontacter sous 24h ✨`;
                   ))}
                 </select>
               </div>
-            </div>
 
-            <button
-              type="submit"
-              className="w-full bg-ink text-sand py-4 px-6 flex items-center justify-center gap-2 text-[11px] uppercase tracking-[0.25em] hover:bg-gold hover:text-ink transition-all duration-300 group"
-            >
-              {sent ? (
-                <>
-                  <Check size={14} /> Demande envoyée
-                </>
-              ) : (
-                <>
-                  Envoyer mon projet pour analyse
-                  <ArrowUpRight
-                    size={14}
-                    className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-                  />
-                </>
-              )}
-            </button>
-          </form>
+              <button
+                type="submit"
+                className="w-full bg-ink text-sand py-4 px-6 flex items-center justify-center gap-2 text-[11px] uppercase tracking-[0.25em] hover:bg-gold hover:text-ink transition-all duration-300 group mt-2"
+              >
+                {sent ? (
+                  <>
+                    <Check size={14} /> Demande envoyée
+                  </>
+                ) : (
+                  <>
+                    Envoyer mon projet
+                    <ArrowUpRight
+                      size={14}
+                      className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                    />
+                  </>
+                )}
+              </button>
 
-          <p className="text-[10px] text-ink/40 mt-4 text-center tracking-wider">
-            ✦ Aucun engagement · Étude gratuite · Réponse personnalisée sous 24h
-          </p>
+              <p className="text-[10px] text-ink/40 text-center tracking-wider pt-1">
+                ✦ Aucun engagement · Étude gratuite
+              </p>
+            </form>
+          </div>
         </motion.div>
       </div>
     </section>
