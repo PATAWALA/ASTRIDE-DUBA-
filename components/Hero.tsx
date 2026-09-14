@@ -6,11 +6,12 @@ import { useState } from "react";
 import { WHATSAPP_NUMBER } from "@/lib/products";
 
 const PROJECT_TYPES = [
-  "Lancement de marque de mode / vêtements",
-  "Lancement de marque de parfums",
-  "Lancement de marque d'accessoires",
-  "Développement de production Dubaï / Inde",
-  "Autre projet",
+  "Lancement de marque de vêtements",
+  "Lancement de marque de robes / abayas",
+  "Lancement de marque de prêt-à-porter",
+  "Collection capsule (5 à 15 pièces)",
+  "Production atelier Dubaï / Inde",
+  "Autre projet mode",
 ];
 
 const BUDGETS = [
@@ -21,8 +22,8 @@ const BUDGETS = [
 ];
 
 const ADVANTAGES = [
-  "Étude personnalisée de votre positionnement",
-  "Accès direct aux fournisseurs Dubaï & Inde",
+  "Étude personnalisée de votre positionnement mode",
+  "Accès direct aux ateliers & fournisseurs Dubaï / Inde",
   "Devis clair, sans engagement",
 ];
 
@@ -39,7 +40,7 @@ export default function Hero() {
 
     const msg = `Bonjour Astride !
 
-Je souhaite lancer mon projet et recevoir une analyse gratuite :
+Je souhaite lancer ma marque de vêtements et recevoir une analyse gratuite :
 • Nom : ${name}
 • WhatsApp : ${phone}
 • Type de projet : ${projectType}
@@ -74,7 +75,7 @@ Merci de me recontacter sous 24h ✨`;
           <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight">
             Lancez votre
             <br />
-            <em className="font-light italic">Marque de Mode</em>
+            <em className="font-light italic">Marque de Vêtements</em>
             <br />
             Dubaï & Inde.
           </h1>
@@ -82,7 +83,8 @@ Merci de me recontacter sous 24h ✨`;
           <p className="mt-8 text-base lg:text-lg text-ink/70 leading-relaxed max-w-lg font-light">
             Envoyez-nous votre projet. Nous analysons votre dossier
             <span className="text-ink font-normal"> gratuitement sous 24h </span>
-            et vous proposons un plan d'accompagnement sur-mesure.
+            et vous proposons un plan d'accompagnement sur-mesure, de la
+            conception à la production.
           </p>
 
           {/* 3 arguments clés */}
@@ -112,7 +114,7 @@ Merci de me recontacter sous 24h ✨`;
           </div>
         </motion.div>
 
-        {/* COLONNE DROITE — Formulaire d'analyse (à la place de l'image) */}
+        {/* COLONNE DROITE — Formulaire d'analyse */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -140,7 +142,7 @@ Merci de me recontacter sous 24h ✨`;
             </div>
 
             <h2 className="font-display text-3xl mb-2">
-              Votre projet
+              Votre projet mode
             </h2>
             <p className="text-xs text-ink/50 mb-6 font-light">
               Remplissez ce formulaire, nous vous recontactons personnellement.
